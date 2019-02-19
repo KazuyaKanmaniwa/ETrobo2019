@@ -12,6 +12,7 @@
 
 int lookup_count=0;
 
+//ゲート侵入
 void lookup_in(){
 	int sonic_distance=get_sonic_sensor_distance();
 	NB_trace_run();
@@ -22,6 +23,7 @@ void lookup_in(){
 	}
 }
 
+//ゲート往復
 void lookup(){
 	NB_fixed_run(LOOKUP_WHEEL_POWER);
 	while (get_distance()<LOOKUP_LEAN_RUN_DISTANCE){}
@@ -36,6 +38,7 @@ void lookup(){
 	turn_run();
 }
 
+//ゲート脱出
 void lookup_out(){
 	NB_fixed_run(-60);
 	tail_lean(30,90, false);

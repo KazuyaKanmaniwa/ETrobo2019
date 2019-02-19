@@ -39,6 +39,7 @@ void tail_stol(){
 	tail_ltos();
 }
 
+//lean to stand
 void tail_ltos() {
 	NB_fixed_run(-1*STOL_WHEEL_POWER);
 	tail_lean(LTOS_LEAN_ANGLE, TAIL_POWER_LOW, false);

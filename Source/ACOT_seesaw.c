@@ -1,4 +1,5 @@
 //作者：上馬庭
+//編集:和泉田
 //日付：20180923
 
 #include "ACOT_seesaw.h"
@@ -9,15 +10,18 @@
 #include "ACOT_game_run.h"
 #include "ev3api.h"
 
+//シーソー侵入時の尻尾パワー
 int invation_lean_power[]={50,-100};
+//シーソー侵入時の尻尾角度
 int invation_lean_angle[]={30,25};
 
-int seesaw_gyro_angle[SEESAW_SECTION]={55,30,30};
-int seesaw_lean_angle[SEESAW_SECTION]={38,60,45};
-int seesaw_lean_power[SEESAW_SECTION]={-50,50,-50};
-int seesaw_slip_power[SEESAW_SECTION]={100,-100,100};
-int seesaw_slip_time[SEESAW_SECTION]={200,180,160};
-int seesaw_run_power[SEESAW_SECTION]={10,-10,10};
+int seesaw_gyro_angle[SEESAW_SECTION]={55,30,30};//ジャイロ反応閾値
+int seesaw_lean_angle[SEESAW_SECTION]={38,60,45};//倒れるときの尻尾角度
+int seesaw_lean_power[SEESAW_SECTION]={-50,50,-50};//倒れるときの尻尾ぱわー
+//機体を傾けるとき少し動かないときれいに倒れない
+int seesaw_slip_power[SEESAW_SECTION]={100,-100,100};//スリップさせるときのタイヤのパワー
+int seesaw_slip_time[SEESAW_SECTION]={200,180,160};//スリップさせる時間
+int seesaw_run_power[SEESAW_SECTION]={10,-10,10};//シーソーを登るときのタイヤのパワー
 int seesaw_gyro_factor[SEESAW_SECTION]={1,-1,1};
 
 void seesaw_in(){

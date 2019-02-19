@@ -55,17 +55,19 @@ void turn_run() {
 	twin_wheel_stop();
 }
 
-//左右車輪を止める
+//左右車輪を止める※グリップ止め
 void twin_wheel_stop() {
 	wheel_stop(RIGHT_WHEEL,BRAKE);
 	wheel_stop(LEFT_WHEEL,BRAKE);
 }
 
+//左右車輪を止める※滑らかに止める
 void twin_wheel_stop_float(){
 	wheel_stop(RIGHT_WHEEL,FLOAT);
 	wheel_stop(LEFT_WHEEL,FLOAT);
 }
 
+//バランサーを使わない走行
 void NB_trace_run() {
 	PID_init(0.5, 0, 0);
 	int power = 10;
