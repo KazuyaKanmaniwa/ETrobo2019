@@ -1,5 +1,3 @@
-//作者：上馬庭
-//日付：20180921
 
 #include "ACOT_bluetooth.h"
 #include "ACOT_debug.h"
